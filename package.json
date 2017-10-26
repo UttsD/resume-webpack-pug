@@ -1,0 +1,18 @@
+{
+  "name": "resume-webpack-pug",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/UttsD/resume-webpack-pug.git",
+  "author": "Dariya Utts <Utts_d@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack"
+  },
+  "devDependencies": {
+    "pug-loader": "^2.3.0",
+    "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "pug": "^2.0.0-rc.4"
+  }
+}
