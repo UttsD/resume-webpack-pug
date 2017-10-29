@@ -4,7 +4,21 @@ html
         meta(charset='utf-8')
         title Resume
     body
-        - var educationList = [{deegree: 'Master Degree', data: '// Feb 2001 - Jun 2004', university: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, {deegree: 'about.html', data: 'About', university: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}];
+        - 
+            var educationList = [
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, 
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'},
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, 
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}]; 
+        - 
+            var expirienceList = [
+                {title: 'Apple Corporation', data: '// Feb 2001 - Jun 2004', headerh4: 'Web-disigner', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, 
+                {title: 'Google', data: '// Feb 2001 - Jun 2004', headerh4: 'Programmist', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'},
+                {title: 'Yahoo!', data: '// Feb 2001 - Jun 2004', headerh4: 'Product manager', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'},]; 
+        - 
+            var softList = [
+                {title: 'Dreamweaver', class: 'drw'},
+                {title: 'Illustrator', class: 'ill'}];          
         mixin titles(sectionName)
             div.titles
                 h3=sectionName
@@ -28,14 +42,18 @@ html
                         li
                             div(class="dot grey")
                     - }
-        mixin  EducationSection(Info)
+        mixin  EducationAndExpirience(Info)
             li
                 div.blockEducation
-                    span.deegree=Info.deegree
+                    span.blockTitle=Info.title
                     span.data=Info.data
-                    h4.university=Info.university
+                    h4.university=Info.headerh4
                     p.text=Info.text
-                
+        mixin SoftSection(SoftInfo)
+            div.softCol
+                h4=SoftInfo.title
+                div.greyBar
+                    div.blueBar(class=SoftInfo.class)         
         
 
         // Photo section
@@ -63,11 +81,17 @@ html
         +titles('education')
             ul
                 each i in educationList
-                    +EducationSection(i)               
+                    +EducationAndExpirience(i)               
         // Expirience section
         +titles('expirience')
+            ul
+                each i in expirienceList
+                    +EducationAndExpirience(i) 
         // Software section
         +titles('software')
+            each i in softList
+                    +SoftSection(i)
+
 
         
         
