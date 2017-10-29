@@ -4,6 +4,7 @@ html
         meta(charset='utf-8')
         title Resume
     body
+        - var educationList = [{deegree: 'Master Degree', data: '// Feb 2001 - Jun 2004', university: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, {deegree: 'about.html', data: 'About', university: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}];
         mixin titles(sectionName)
             div.titles
                 h3=sectionName
@@ -28,11 +29,13 @@ html
                             div(class="dot grey")
                     - }
         mixin  EducationSection(Info)
-            div.blockEducation
-                span.deegree=Info.deegree
-                span.data=Info.data
-                h4=Info.university
-                p.text=Info.text
+            li
+                div.blockEducation
+                    span.deegree=Info.deegree
+                    span.data=Info.data
+                    h4.university=Info.university
+                    p.text=Info.text
+                
         
 
         // Photo section
@@ -57,7 +60,10 @@ html
             +skillsDots(6, 6, 'Innovate')
             +skillsDots(11, 1, 'Communication')
         // Education section
-        +titles('education')               
+        +titles('education')
+            ul
+                each i in educationList
+                    +EducationSection(i)               
         // Expirience section
         +titles('expirience')
         // Software section

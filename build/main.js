@@ -335,6 +335,7 @@ var pug = __webpack_require__(0);
 
 function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
 pug_html = pug_html + "\u003C!DOCTYPE html\u003E\n\u003Chtml\u003E\n  \u003Chead\u003E\n    \u003Cmeta charset=\"utf-8\"\u003E\n    \u003Ctitle\u003EResume\u003C\u002Ftitle\u003E\n  \u003C\u002Fhead\u003E\n  \u003Cbody\u003E";
+var educationList = [{deegree: 'Master Degree', data: '// Feb 2001 - Jun 2004', university: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, {deegree: 'about.html', data: 'About', university: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}];
 pug_mixins["titles"] = pug_interp = function(sectionName){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
 pug_html = pug_html + "\n    ";
@@ -405,18 +406,22 @@ pug_html = pug_html + "\u003C\u002Ful\u003E\n    ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-
-
-
-
-
-
-
-
-
-
-
-
+pug_mixins["EducationSection"] = pug_interp = function(Info){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"blockEducation\"\u003E\u003Cspan class=\"deegree\"\u003E" + (pug.escape(null == (pug_interp = Info.deegree) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\u003Cspan class=\"data\"\u003E" + (pug.escape(null == (pug_interp = Info.data) ? "" : pug_interp)) + "\u003C\u002Fspan\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ch4 class=\"university\"\u003E" + (pug.escape(null == (pug_interp = Info.university) ? "" : pug_interp)) + "\u003C\u002Fh4\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cp class=\"text\"\u003E" + (pug.escape(null == (pug_interp = Info.text) ? "" : pug_interp)) + "\u003C\u002Fp\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+};
 pug_html = pug_html + "\n    \u003C!-- Photo section--\u003E\n    \u003Cdiv class=\"head\"\u003E\n      \u003Cdiv class=\"shild\"\u003E\u003C\u002Fdiv\u003E\n      \u003Ch2\u003Ename here\u003C\u002Fh2\u003E\n      \u003Ch1\u003Esurname\u003C\u002Fh1\u003E\n      \u003Ch4\u003Egraphice designer   \u003C\u002Fh4\u003E\n    \u003C\u002Fdiv\u003E\n    \u003C!-- Profile section--\u003E";
 pug_indent.push('    ');
 pug_mixins["titles"].call({
@@ -469,7 +474,42 @@ pug_html = pug_html + "\n    \u003C!-- Education section--\u003E";
 pug_indent.push('    ');
 pug_mixins["titles"].call({
 block: function(){
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cul\u003E";
+// iterate educationList
+;(function(){
+  var $$obj = educationList;
+  if ('number' == typeof $$obj.length) {
+      for (var pug_index0 = 0, $$l = $$obj.length; pug_index0 < $$l; pug_index0++) {
+        var i = $$obj[pug_index0];
+pug_indent.push('  ');
+pug_mixins["EducationSection"].call({
+block: function(){
 pug_html = pug_html + "              ";
+}
+}, i);
+pug_indent.pop();
+      }
+  } else {
+    var $$l = 0;
+    for (var pug_index0 in $$obj) {
+      $$l++;
+      var i = $$obj[pug_index0];
+pug_indent.push('  ');
+pug_mixins["EducationSection"].call({
+block: function(){
+pug_html = pug_html + "              ";
+}
+}, i);
+pug_indent.pop();
+    }
+  }
+}).call(this);
+
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ful\u003E";
 }
 }, 'education');
 pug_indent.pop();
