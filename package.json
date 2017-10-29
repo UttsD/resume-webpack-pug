@@ -6,7 +6,8 @@
   "author": "Dariya Utts <Utts_d@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "build": "webpack-dev-server"
   },
   "devDependencies": {
     "html-webpack-plugin": "^2.30.1",
@@ -14,6 +15,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "webpack-dev-server": "2.4.2"
   }
 }
