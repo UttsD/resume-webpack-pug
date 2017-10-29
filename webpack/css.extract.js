@@ -19,7 +19,9 @@ module.exports = function(paths) {
                     use: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
                         use: 'css-loader',
+                        
                     }),
+                    
                 },
             ],
         },
