@@ -3,17 +3,67 @@ html
     head
         meta(charset='utf-8')
         title Resume
-body
-    mixin titles(sectionName)
-        div.titles
-            h3=sectionName
+    body
+        mixin titles(sectionName)
+            div.titles
+                h3=sectionName
+                if block
+                    block
+                else
+                    p No content provided
+        mixin contactRow(name, value)
+            div.contactRow
+                div.nameCol=name
+                div.valueCol=value
+        mixin skillsDots(blue, grey, skill)
+            div.skillsRow
+                h4=skill
+                ul.skillsDots
+                    - for(var i=1; i<=blue; i++){
+                        li
+                            div(class="dot blue")
+                    - }
+                    - for(var i=1; i<=grey; i++){
+                        li
+                            div(class="dot grey")
+                    - }
+        mixin  EducationSection(Info)
+            div.blockEducation
+                span.deegree=Info.deegree
+                span.data=Info.data
+                h4=Info.university
+                p.text=Info.text
+        
 
-    div(class="head")
-        div(class="shild")
-        h2 name here
-        h1 surname
-        h4 graphice designer  
-    +titles("Profile")
+        // Photo section
+        div(class="head")
+            div(class="shild")
+            h2 name here
+            h1 surname
+            h4 graphice designer   
+        // Profile section
+        +titles('profile')
+            p Lorem ipsum dolor sit amet, ad habeo phaedrum ius, an has dicam abhorreant quaerendum. Cum liber comprehensam cu. Saepe evertitur eu eam, oporteat temporibus conclusionemque te vis, duis essent appareat in eam. Cum ad omnesque noluisse fabellas. Id eum quem modus soleat, mei te forensibus reprimique. Omnes diceret utroque ei has, qui case partiendo id. Has at sale delectus legendos. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis, brute dolores inimicus usu ei. Ex fugit meliore pertinacia sea. Cum ut graeco perpetua argumentum, fastidii constituto eu vel. Vel ipsum altera integre te. In magna noster vidisse mel. Te zril euripidis delicatissimi vim.
+        // Contact section
+        +titles('contact')
+            +contactRow('Address', 'Wale Street, City.')
+            +contactRow('e-mail', 'contact@domain.com')
+            +contactRow('phone', '555-555-555')
+            +contactRow('website', 'www.yourweb.com')
+        // Skills section
+        +titles('skills')
+            +skillsDots(9, 3, 'Creative')
+            +skillsDots(11, 1, 'Teamwork')
+            +skillsDots(6, 6, 'Innovate')
+            +skillsDots(11, 1, 'Communication')
+        // Education section
+        +titles('education')               
+        // Expirience section
+        +titles('expirience')
+        // Software section
+        +titles('software')
+
+        
         
 	
         

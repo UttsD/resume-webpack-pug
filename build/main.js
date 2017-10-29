@@ -334,22 +334,154 @@ function pug_rethrow(err, filename, lineno, str){
 var pug = __webpack_require__(0);
 
 function template(locals) {var pug_html = "", pug_mixins = {}, pug_interp;var pug_indent = [];
-pug_html = pug_html + "\u003C!DOCTYPE html\u003E\n\u003Chtml\u003E\n  \u003Chead\u003E\n    \u003Cmeta charset=\"utf-8\"\u003E\n    \u003Ctitle\u003EResume\u003C\u002Ftitle\u003E\n  \u003C\u002Fhead\u003E\n\u003C\u002Fhtml\u003E\n\u003Cbody\u003E";
+pug_html = pug_html + "\u003C!DOCTYPE html\u003E\n\u003Chtml\u003E\n  \u003Chead\u003E\n    \u003Cmeta charset=\"utf-8\"\u003E\n    \u003Ctitle\u003EResume\u003C\u002Ftitle\u003E\n  \u003C\u002Fhead\u003E\n  \u003Cbody\u003E";
 pug_mixins["titles"] = pug_interp = function(sectionName){
 var block = (this && this.block), attributes = (this && this.attributes) || {};
-pug_html = pug_html + "\n  ";
+pug_html = pug_html + "\n    ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Cdiv class=\"titles\"\u003E\n    ";
+pug_html = pug_html + "\u003Cdiv class=\"titles\"\u003E\n      ";
 pug_html = pug_html + pug_indent.join("");
-pug_html = pug_html + "\u003Ch3\u003E" + (pug.escape(null == (pug_interp = sectionName) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E\n  ";
+pug_html = pug_html + "\u003Ch3\u003E" + (pug.escape(null == (pug_interp = sectionName) ? "" : pug_interp)) + "\u003C\u002Fh3\u003E";
+if (block) {
+pug_indent.push('      ');
+block && block();
+pug_indent.pop();
+}
+else {
+pug_html = pug_html + "\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cp\u003ENo content provided\u003C\u002Fp\u003E";
+}
+pug_html = pug_html + "\n    ";
 pug_html = pug_html + pug_indent.join("");
 pug_html = pug_html + "\u003C\u002Fdiv\u003E";
 };
-pug_html = pug_html + "\n  \u003Cdiv class=\"head\"\u003E\n    \u003Cdiv class=\"shild\"\u003E\u003C\u002Fdiv\u003E\n    \u003Ch2\u003Ename here\u003C\u002Fh2\u003E\n    \u003Ch1\u003Esurname\u003C\u002Fh1\u003E\n    \u003Ch4\u003Egraphice designer  \u003C\u002Fh4\u003E\n  \u003C\u002Fdiv\u003E";
-pug_indent.push('  ');
-pug_mixins["titles"]("Profile");
+pug_mixins["contactRow"] = pug_interp = function(name, value){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"contactRow\"\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"nameCol\"\u003E" + (pug.escape(null == (pug_interp = name) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"valueCol\"\u003E" + (pug.escape(null == (pug_interp = value) ? "" : pug_interp)) + "\u003C\u002Fdiv\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+pug_mixins["skillsDots"] = pug_interp = function(blue, grey, skill){
+var block = (this && this.block), attributes = (this && this.attributes) || {};
+pug_html = pug_html + "\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"skillsRow\"\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Ch4\u003E" + (pug.escape(null == (pug_interp = skill) ? "" : pug_interp)) + "\u003C\u002Fh4\u003E\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cul class=\"skillsDots\"\u003E";
+for(var i=1; i<=blue; i++){
+{
+pug_html = pug_html + "\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"dot blue\"\u003E\u003C\u002Fdiv\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+}
+}
+for(var i=1; i<=grey; i++){
+{
+pug_html = pug_html + "\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cli\u003E\n          ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cdiv class=\"dot grey\"\u003E\u003C\u002Fdiv\u003E\n        ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fli\u003E";
+}
+}
+pug_html = pug_html + "\n      ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Ful\u003E\n    ";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003C\u002Fdiv\u003E";
+};
+
+
+
+
+
+
+
+
+
+
+
+
+pug_html = pug_html + "\n    \u003C!-- Photo section--\u003E\n    \u003Cdiv class=\"head\"\u003E\n      \u003Cdiv class=\"shild\"\u003E\u003C\u002Fdiv\u003E\n      \u003Ch2\u003Ename here\u003C\u002Fh2\u003E\n      \u003Ch1\u003Esurname\u003C\u002Fh1\u003E\n      \u003Ch4\u003Egraphice designer   \u003C\u002Fh4\u003E\n    \u003C\u002Fdiv\u003E\n    \u003C!-- Profile section--\u003E";
+pug_indent.push('    ');
+pug_mixins["titles"].call({
+block: function(){
+pug_html = pug_html + "\n";
+pug_html = pug_html + pug_indent.join("");
+pug_html = pug_html + "\u003Cp\u003ELorem ipsum dolor sit amet, ad habeo phaedrum ius, an has dicam abhorreant quaerendum. Cum liber comprehensam cu. Saepe evertitur eu eam, oporteat temporibus conclusionemque te vis, duis essent appareat in eam. Cum ad omnesque noluisse fabellas. Id eum quem modus soleat, mei te forensibus reprimique. Omnes diceret utroque ei has, qui case partiendo id. Has at sale delectus legendos. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis, brute dolores inimicus usu ei. Ex fugit meliore pertinacia sea. Cum ut graeco perpetua argumentum, fastidii constituto eu vel. Vel ipsum altera integre te. In magna noster vidisse mel. Te zril euripidis delicatissimi vim.\u003C\u002Fp\u003E";
+}
+}, 'profile');
 pug_indent.pop();
-pug_html = pug_html + "\n\u003C\u002Fbody\u003E";;return pug_html;};
+pug_html = pug_html + "\n    \u003C!-- Contact section--\u003E";
+pug_indent.push('    ');
+pug_mixins["titles"].call({
+block: function(){
+pug_indent.push('');
+pug_mixins["contactRow"]('Address', 'Wale Street, City.');
+pug_indent.pop();
+pug_indent.push('');
+pug_mixins["contactRow"]('e-mail', 'contact@domain.com');
+pug_indent.pop();
+pug_indent.push('');
+pug_mixins["contactRow"]('phone', '555-555-555');
+pug_indent.pop();
+pug_indent.push('');
+pug_mixins["contactRow"]('website', 'www.yourweb.com');
+pug_indent.pop();
+}
+}, 'contact');
+pug_indent.pop();
+pug_html = pug_html + "\n    \u003C!-- Skills section--\u003E";
+pug_indent.push('    ');
+pug_mixins["titles"].call({
+block: function(){
+pug_indent.push('');
+pug_mixins["skillsDots"](9, 3, 'Creative');
+pug_indent.pop();
+pug_indent.push('');
+pug_mixins["skillsDots"](11, 1, 'Teamwork');
+pug_indent.pop();
+pug_indent.push('');
+pug_mixins["skillsDots"](6, 6, 'Innovate');
+pug_indent.pop();
+pug_indent.push('');
+pug_mixins["skillsDots"](11, 1, 'Communication');
+pug_indent.pop();
+}
+}, 'skills');
+pug_indent.pop();
+pug_html = pug_html + "\n    \u003C!-- Education section--\u003E";
+pug_indent.push('    ');
+pug_mixins["titles"].call({
+block: function(){
+pug_html = pug_html + "              ";
+}
+}, 'education');
+pug_indent.pop();
+pug_html = pug_html + "\n    \u003C!-- Expirience section--\u003E";
+pug_indent.push('    ');
+pug_mixins["titles"]('expirience');
+pug_indent.pop();
+pug_html = pug_html + "\n    \u003C!-- Software section--\u003E";
+pug_indent.push('    ');
+pug_mixins["titles"]('software');
+pug_indent.pop();
+pug_html = pug_html + "\n  \u003C\u002Fbody\u003E\n\u003C\u002Fhtml\u003E";;return pug_html;};
 module.exports = template;
 
 /***/ }),
