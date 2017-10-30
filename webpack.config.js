@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug.js');
 const devserver = require('./webpack/devserver.js');
-const sass = require('./webpack/sass');
+
 const extractCSS = require('./webpack/css.extract.js');
 const files = require('./webpack/files.js');
  
@@ -33,21 +33,22 @@ const common = merge([{
     ]
 },
 pug(),
+extractCSS(),
 files()
 ]);
     module.exports =  function(env){
         if (env === 'production') {
             return merge([
-                common,
-                extractCSS()
+                common
+                
             ]);
             
         }
         if (env === 'development') {
             return merge([
                 common,
-                devserver(),
-                sass()
+                devserver()
+                
             ])   
     }
 };

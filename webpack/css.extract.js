@@ -23,6 +23,16 @@ module.exports = function(paths) {
                     }),
                     
                 },
+                {
+                    test: /\.styl$/,
+                    include: paths,
+                    use: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: 'css-loader!stylus-loader',
+                        
+                    }),
+                    
+                },
             ],
         },
         plugins: [

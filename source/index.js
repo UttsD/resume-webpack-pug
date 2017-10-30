@@ -1,3 +1,3 @@
 import './fonts.css';
-import './styles.scss';
+import './test.styl';
 
