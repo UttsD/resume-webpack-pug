@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'MyriadPro-Bold';
-    src: url('fonts/MyriadPro-Bold.eot'); 
-    src: url('fonts/MyriadPro-Bold.eot') format('eot'),
-         url('fonts/MyriadPro-Bold.woff') format('woff'),
-         url('fonts/MyriadPro-Bold.ttf') format('truetype'),
-         url('fonts/MyriadPro-Bold.svg#MyriadPro-Bold') format('svg');
+    src: url('./fonts/MyriadPro-Bold.eot'); 
+    src: url('./fonts/MyriadPro-Bold.eot') format('eot'),
+         url('./fonts/MyriadPro-Bold.woff') format('woff'),
+         url('./fonts/MyriadPro-Bold.ttf') format('truetype'),
+         url('./fonts/MyriadPro-Bold.svg#MyriadPro-Bold') format('svg');
 }
 
 @font-face {

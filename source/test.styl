@@ -1,15 +1,16 @@
-bold-font='MyriadPro-Bold';
+bold-font="MyriadPro-Bold";
 normal-font='MyriadPro-Regular';
 semibold-font='MyriadPro-Semibold';
 elements-color=#3d6cb0;
-
+grey-color=#e6e6e6;
+    
     body
     ul
     li
     p
     h2
-    h3
     h4
+    h1
         padding 0
         margin 0
        
@@ -18,14 +19,25 @@ elements-color=#3d6cb0;
     h4
     h3
         text-transform: uppercase
+    
     .head
         text-align center
-    .head
         h1
-            margin: 0;
+            line-height 0.9          
+            font-family bold-font
+            font-size 4em
+        h2
+            word-spacing: 5px
+            font-weight normal
+            font-family normal-font
+            line-height 0.8
+            font-size 3.5em
+        h4
+            font-family bold-font  
+            font-size 24px 
+            margin-top 13px 
     
-    
-    .flexbox
+    .flexbox    
         display flex
         flex-direction: row
         justify-content center
@@ -33,67 +45,186 @@ elements-color=#3d6cb0;
         
         
     .rightcol
-        padding-right 40px  
-        width 600px
+        padding-right 93px  
+        width 425px
             
     .leftcol
-        padding-left 40px    
-        width 600px
+        padding-left 40px          
+        width 645px
 
     .shild
-        width: 185px;
-        height: 185px;
-        border-radius: 50%;
-        border: 1px solid elements-color;
-        margin: auto
-        margin-top: 15px;
-        position: relative;
+        width 237px
+        height 237px
+        border-radius 50%
+        border 1px solid elements-color
+        margin auto
+        margin-top 94px
+        margin-bottom 35px
+        position relative
         &::after
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            height: 90%;
-            border-radius: 50%;
-            background-color: elements-color;
-
+            content ""
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -50%)
+            width 90%
+            height 90%
+            border-radius 50%
+            background-color elements-color
+            
     .titles
+        margin-left: -10px;
         h3
-            font-family: bold-font
-            color: elements-color
+            font-family bold-font
+            font-size 42px
+            line-height: 1.1    
+            color elements-color
+            overflow hidden
+            margin-bottom 0
             &::after
                 content ""
                 display inline-block
-                vertical-align: middle
-                box-sizing: border-box
-                height 6px
-                width: 100% - 30px
-                background: #3d6cb0
+                vertical-align middle
+                box-sizing border-box
+                height 5px
+                width 100% 
+                background elements-color
                 margin-right: -100%
-                border: solid #fff
-                border-width: 0 10px
+                border solid #fff
+                border-width 0 10px
             &::before
-                content: "";
-                width: 100px;
-                height: 100px;
-                background: url(icons.png) no-repeat center center;
+                content ""
+                width: 70px;
+                height: 70px;    
                 vertical-align: middle;
-                margin-right: 5px;
-                background-size: cover;
-                background-origin: border-box;
+                margin-right: 10px;
                 display inline-block
+                border-radius: 50%
+                
+    
     .profile
+        margin-top 80px
+        h3
+            margin-bottom 10px
+            &::before
+                width: 76px; height: 74px;
+                background: url('icons.png') -10px -106px;  
+
+        p
+            font-size: 16px;
+            width: 430px
+            font-family: normal-font
+            font-weight: normal
+            word-wrap: break-word
+            b
+                font-family bold-font
+    .education
+        padding-top: 35px
+        ul
+            
+            li  
+                font-size: 16px
+                .blockTitle
+                    color: elements-color
+                    font-family: bold-font
+                    text-transform: uppercase
+                    font-size: 25px
         h3
             &::before
-                background-position: -70px 0px;  
-        p
-            font-size: 12px;
+                width: 76px; height: 74px;
+                background: url('icons.png') -109px -10px;
+    .expirience
+        h3
+            &::before
+                width: 79px; height: 76px;
+                background: url('icons.png') -10px -10px;
+    .software
+        .cols
+            display: flex
+            flex-direction: row
+            justify-content flex-start
+            flex-wrap wrap
+           
+        h3
+            &::before
+                width: 76px; height: 74px;
+                background: url('icons.png') -106px -106px;
+        .softCol
+            padding: 2px 0px;
+            text-transform: uppercase;
+            font-family: normal-font
+            font-weight: normal;
+            .greyBar, .blueBar 
+                display: block;
+                width: 282px
+                height: 23px;
+                margin: 10px 0;
+                margin-right: 40px;
+                background-color: grey-color
+                .blueBar 
+                    background-color: elements-color; 
+                    width: 90%
+                .drw  
+                    width: 80%
+                .ill
+                    width 70%
+                .ae
+                    width 65%
+                .ind
+                    width: 60%
+                
     .skills
+        
+        h3
+            padding-bottom: 18px
+            &::before
+                width: 74px; height: 74px;
+                background: url('icons.png') -205px -104px;
         .skillsRow
+
             text-align: center
+            font-family: normal-font
+            font-weight: normal
+            font-size: 26px
+            margin: 10px 0
             .skillsDots
-                padding: 10px 0
+                padding: 5px 0
                 li  
                     display: inline-block
+            .dot
+                display: block;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                margin-right: 5px;  
+            .blue
+                background: elements-color;
+            .grey   
+                background: grey-color;      
+    .contact
+        h3
+            &::before
+                width: 74px; 
+                height: 74px;
+                background: url('icons.png') -205px -10px; 
+          
+        .contactRow
+            &:first-of-type 
+                margin-top: 35px
+            &:last-of-type
+                margin-top 40px
+            margin-bottom 30px
+            display: flex
+            flex-wrap: wrap
+            justify-content: flex-start
+            .nameCol   
+                color: elements-color;
+                text-transform: uppercase;
+                padding-right: 50px
+                font-family: bold-font
+                font-size: 20px
+            .valueCol
+                font-family: normal-font   
+                font-weight: normal
+                font-size: 20px;
+            
