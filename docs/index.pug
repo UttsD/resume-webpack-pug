@@ -1,0 +1,110 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title Resume
+        link(rel='stylesheet', href='fonts.css')
+    body
+        - 
+            var educationList = [
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, 
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'},
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, 
+                {title: 'Master Degree', data: '// Feb 2001 - Jun 2004', headerh4: 'Oxford university', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}]; 
+        - 
+            var expirienceList = [
+                {title: 'Apple Corporation', data: '// Feb 2001 - Jun 2004', headerh4: 'Web-disigner', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'}, 
+                {title: 'Google', data: '// Feb 2001 - Jun 2004', headerh4: 'Programmist', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'},
+                {title: 'Yahoo!', data: '// Feb 2001 - Jun 2004', headerh4: 'Product manager', text: 'Ne tota copiosae referrentur quo. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis.'},]; 
+        - 
+            var softList = [
+                {title: 'Photoshop', class: 'ps'},
+                {title: 'Dreamweaver', class: 'drw'},
+                {title: 'Illustrator', class: 'ill'},
+                {title: 'After effects', class: 'ae'},
+                {title: 'Indesign', class: 'ind'},
+                {title: 'HTML&amp;CSS3', class: 'htmlCss3'}];          
+        mixin titles(sectionName)
+            div.titles(class=sectionName)
+                h3=sectionName
+                if block
+                    block
+                else
+                    p No content provided
+        mixin contactRow(name, value)
+            div.contactRow
+                div.nameCol=name
+                div.valueCol=value
+        mixin skillsDots(blue, grey, skill)
+            div.skillsRow
+                h4=skill
+                ul.skillsDots
+                    - for(var i=1; i<=blue; i++){
+                        li
+                            div(class="dot blue")
+                    - }
+                    - for(var i=1; i<=grey; i++){
+                        li
+                            div(class="dot grey")
+                    - }
+        mixin  EducationAndExpirience(Info)
+            li
+                div.blockEducation
+                    span.blockTitle=Info.title
+                    span.data=Info.data
+                    h4.university=Info.headerh4
+                    p.text=Info.text
+        mixin SoftSection(SoftInfo)
+            div.softCol
+                h4=SoftInfo.title
+                div.greyBar
+                    div.blueBar(class=SoftInfo.class)         
+        
+        div.flexbox
+            // Photo section
+            div.rightcol
+                div(class="head")
+                    div(class="shild")
+                    h2 name here
+                    h1 surname
+                    h4 graphice designer   
+                // Profile section
+                +titles('profile')
+                    p Lorem ipsum dolor sit amet, ad habeo phaedrum ius, an has dicam abhorreant quaerendum. Cum liber comprehensam cu. Saepe evertitur eu eam, oporteat temporibus conclusionemque te vis, duis essent appareat in eam. Cum ad omnesque noluisse fabellas. Id eum quem modus soleat, mei te forensibus reprimique. Omnes diceret utroque ei has, qui case partiendo id. Has at sale delectus legendos. Vim augue nominavi at. No errem fabulas vis, electram tractatos vel no. Eum ne erant sapientem. No sanctus iudicabit his, noster conceptam ei vis, brute dolores inimicus usu ei. Ex fugit meliore pertinacia sea. Cum ut graeco perpetua argumentum, fastidii constituto eu vel. Vel ipsum altera integre te. In magna noster vidisse mel. Te zril euripidis delicatissimi vim.
+                // Contact section
+                +titles('contact')
+                    +contactRow('Address', 'Wale Street, City.')
+                    +contactRow('e-mail', 'contact@domain.com')
+                    +contactRow('phone', '555-555-555')
+                    +contactRow('website', 'www.yourweb.com')
+                // Skills section
+                +titles('skills')
+                    +skillsDots(9, 3, 'Creative')
+                    +skillsDots(11, 1, 'Teamwork')
+                    +skillsDots(6, 6, 'Innovate')
+                    +skillsDots(11, 1, 'Communication')
+            div.leftcol
+                // Education section
+                +titles('education')
+                    ul
+                        each i in educationList
+                            +EducationAndExpirience(i)               
+                // Expirience section
+                +titles('expirience')
+                    ul
+                        each i in expirienceList
+                            +EducationAndExpirience(i) 
+                // Software section
+                +titles('software')
+                    each i in softList
+                            +SoftSection(i)
+
+
+        
+        
+	
+        
+
+
+
+

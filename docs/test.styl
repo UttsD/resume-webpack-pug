@@ -1,0 +1,99 @@
+bold-font='MyriadPro-Bold';
+normal-font='MyriadPro-Regular';
+semibold-font='MyriadPro-Semibold';
+elements-color=#3d6cb0;
+
+    body
+    ul
+    li
+    p
+    h2
+    h3
+    h4
+        padding 0
+        margin 0
+       
+    h1
+    h2
+    h4
+    h3
+        text-transform: uppercase
+    .head
+        text-align center
+    .head
+        h1
+            margin: 0;
+    
+    
+    .flexbox
+        display flex
+        flex-direction: row
+        justify-content center
+        flex-wrap wrap
+        
+        
+    .rightcol
+        padding-right 40px  
+        width 600px
+            
+    .leftcol
+        padding-left 40px    
+        width 600px
+
+    .shild
+        width: 185px;
+        height: 185px;
+        border-radius: 50%;
+        border: 1px solid elements-color;
+        margin: auto
+        margin-top: 15px;
+        position: relative;
+        &::after
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background-color: elements-color;
+
+    .titles
+        h3
+            font-family: bold-font
+            color: elements-color
+            &::after
+                content ""
+                display inline-block
+                vertical-align: middle
+                box-sizing: border-box
+                height 6px
+                width: 100% - 30px
+                background: #3d6cb0
+                margin-right: -100%
+                border: solid #fff
+                border-width: 0 10px
+            &::before
+                content: "";
+                width: 100px;
+                height: 100px;
+                background: url(icons.png) no-repeat center center;
+                vertical-align: middle;
+                margin-right: 5px;
+                background-size: cover;
+                background-origin: border-box;
+                display inline-block
+    .profile
+        h3
+            &::before
+                background-position: -70px 0px;  
+        p
+            font-size: 12px;
+    .skills
+        .skillsRow
+            text-align: center
+            .skillsDots
+                padding: 10px 0
+                li  
+                    display: inline-block
