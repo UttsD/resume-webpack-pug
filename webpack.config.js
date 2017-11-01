@@ -10,7 +10,7 @@ const files = require('./webpack/files.js');
  
 const PATHS = {
     source: path.join(__dirname, 'source'),
-    build: path.join(__dirname, 'build')
+    build: path.join(__dirname, 'docs')
 };
 
 const common = merge([{
