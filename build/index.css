@@ -65,16 +65,16 @@ h3 {
 .flexbox {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .rightcol {
-  padding-right: 93px;
+  padding-left: 34px;
   width: 425px;
 }
 .leftcol {
-  padding-left: 40px;
-  width: 645px;
+  padding-right: 85px;
+  width: 640px;
 }
 .shild {
   width: 237px;
@@ -150,19 +150,67 @@ h3 {
 .profile p b {
   font-family: "MyriadPro-Bold";
 }
-.education {
-  padding-top: 35px;
+.education ul li,
+.expirience ul li {
+  padding-left: 6px;
+  list-style: none;
 }
-.education ul li {
-  font-size: 16px;
+.education ul li:first-of-type,
+.expirience ul li:first-of-type {
+  padding-top: 26px;
 }
-.education ul li .blockTitle {
-  color: #3d6cb0;
+.education .blockTitle,
+.expirience .blockTitle {
   font-family: "MyriadPro-Bold";
   text-transform: uppercase;
   font-size: 25px;
 }
-.education h3::before {
+.education .blockTitle::before,
+.expirience .blockTitle::before {
+  content: "";
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background-color: #000;
+  margin-right: 23px;
+}
+.education .data,
+.expirience .data {
+  font-family: 'MyriadPro-Regular';
+  font-weight: normal;
+  font-size: 25px;
+  margin-left: 10px;
+}
+.education h4,
+.expirience h4 {
+  text-transform: uppercase;
+  font-family: 'MyriadPro-Regular';
+  font-weight: normal;
+  font-size: 25px;
+  margin-left: 40px;
+  margin-top: 5px;
+}
+.education p,
+.expirience p {
+  font-size: 16px;
+  font-family: 'MyriadPro-Regular';
+  font-weight: normal;
+  margin-left: 40px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+}
+.expirience ul li:first-of-type {
+  padding-top: 34px;
+}
+.education.titles {
+  padding-top: 35px;
+  padding-left: 0px;
+}
+.education.titles .blockTitle {
+  color: #3d6cb0;
+}
+.education.titles h3::before {
   width: 76px;
   height: 74px;
   background: url(images/icons.png) -109px -10px;
@@ -175,8 +223,9 @@ h3 {
 .software .cols {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
+  padding-top: 20px;
 }
 .software h3::before {
   width: 76px;
@@ -188,14 +237,15 @@ h3 {
   text-transform: uppercase;
   font-family: 'MyriadPro-Regular';
   font-weight: normal;
+  font-size: 26px;
 }
 .software .softCol .greyBar,
 .software .softCol .blueBar {
   display: block;
-  width: 282px;
+  width: 288px;
   height: 23px;
-  margin: 10px 0;
-  margin-right: 40px;
+  margin-top: 14px;
+  margin-bottom: 17px;
   background-color: #e6e6e6;
 }
 .software .softCol .greyBar .blueBar,
@@ -205,15 +255,15 @@ h3 {
 }
 .software .softCol .greyBar .drw,
 .software .softCol .blueBar .drw {
-  width: 80%;
+  width: 70%;
 }
 .software .softCol .greyBar .ill,
 .software .softCol .blueBar .ill {
-  width: 70%;
+  width: 55%;
 }
 .software .softCol .greyBar .ae,
 .software .softCol .blueBar .ae {
-  width: 65%;
+  width: 80%;
 }
 .software .softCol .greyBar .ind,
 .software .softCol .blueBar .ind {
@@ -281,4 +331,5 @@ h3 {
   font-family: 'MyriadPro-Regular';
   font-weight: normal;
   font-size: 20px;
+  text-align: left;
 }

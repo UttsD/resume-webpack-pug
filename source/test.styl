@@ -40,17 +40,18 @@ grey-color=#e6e6e6;
     .flexbox    
         display flex
         flex-direction: row
-        justify-content center
+        justify-content space-around
         flex-wrap wrap
         
         
     .rightcol
-        padding-right 93px  
+        
+        padding-left: 34px
         width 425px
             
     .leftcol
-        padding-left 40px          
-        width 645px
+        padding-right: 85px        
+        width 640px
 
     .shild
         width 237px
@@ -72,6 +73,7 @@ grey-color=#e6e6e6;
             border-radius 50%
             background-color elements-color
             
+    
     .titles
         margin-left: -10px;
         h3
@@ -118,34 +120,76 @@ grey-color=#e6e6e6;
             word-wrap: break-word
             b
                 font-family bold-font
-    .education
+    .education, .expirience
+        ul   
+            li
+                padding-left: 6px
+                list-style: none
+                &:first-of-type 
+                    padding-top: 26px
+        .blockTitle
+            font-family: bold-font
+            text-transform: uppercase
+            font-size: 25px                  
+            &::before
+                content: ""
+                display: inline-block
+                width: 19px
+                height: 19px;
+                border-radius: 50%
+                background-color: black
+                margin-right: 23px
+        .data
+            font-family: normal-font
+            font-weight: normal
+            font-size: 25px
+            margin-left: 10px
+        h4
+            text-transform: uppercase
+            font-family: normal-font
+            font-weight normal
+            font-size: 25px
+            margin-left: 40px
+            margin-top: 5px
+        p
+            font-size: 16px;   
+            font-family: normal-font
+            font-weight: normal
+            margin-left: 40px
+            margin-top: 5px
+            padding-bottom 15px
+    .expirience
+
+        ul   
+            li
+                &:first-of-type 
+                    padding-top: 34px        
+    .education.titles   
         padding-top: 35px
-        ul
-            
-            li  
-                font-size: 16px
-                .blockTitle
-                    color: elements-color
-                    font-family: bold-font
-                    text-transform: uppercase
-                    font-size: 25px
+        padding-left: 0px
+        .blockTitle
+            color: elements-color        
         h3
             &::before
                 width: 76px; height: 74px;
                 background: url('icons.png') -109px -10px;
+    
     .expirience
         h3
             &::before
                 width: 79px; height: 76px;
                 background: url('icons.png') -10px -10px;
     .software
+        
         .cols
             display: flex
             flex-direction: row
-            justify-content flex-start
+            justify-content space-between
             flex-wrap wrap
+            padding-top: 20px
            
         h3
+            
             &::before
                 width: 76px; height: 74px;
                 background: url('icons.png') -106px -106px;
@@ -154,22 +198,23 @@ grey-color=#e6e6e6;
             text-transform: uppercase;
             font-family: normal-font
             font-weight: normal;
+            font-size: 26px
             .greyBar, .blueBar 
                 display: block;
-                width: 282px
+                width: 288px
                 height: 23px;
-                margin: 10px 0;
-                margin-right: 40px;
+                margin-top: 14px
+                margin-bottom: 17px                
                 background-color: grey-color
                 .blueBar 
                     background-color: elements-color; 
                     width: 90%
                 .drw  
-                    width: 80%
+                    width: 70%
                 .ill
-                    width 70%
+                    width 55%
                 .ae
-                    width 65%
+                    width 80%
                 .ind
                     width: 60%
                 
@@ -226,5 +271,8 @@ grey-color=#e6e6e6;
             .valueCol
                 font-family: normal-font   
                 font-weight: normal
-                font-size: 20px;
+                font-size: 20px; 
+                text-align left  
+
+
             
