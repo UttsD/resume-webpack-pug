@@ -67,13 +67,14 @@ h3 {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  flex-base: 1250px;
 }
 .rightcol {
-  padding-left: 34px;
+  margin-left: 50px;
   width: 425px;
 }
 .leftcol {
-  padding-right: 85px;
+  margin-left: 150px;
   width: 640px;
 }
 .shild {
