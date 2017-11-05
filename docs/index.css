@@ -65,15 +65,15 @@ h3 {
 .flexbox {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .rightcol {
-  margin-left: 50px;
+  margin-left: 70px;
   width: 425px;
 }
 .leftcol {
-  margin-left: 50px;
+  margin-left: 70px;
   width: 640px;
 }
 .shild {
