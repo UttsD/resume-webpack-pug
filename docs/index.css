@@ -67,14 +67,13 @@ h3 {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
-  flex-base: 1250px;
 }
 .rightcol {
   margin-left: 50px;
   width: 425px;
 }
 .leftcol {
-  margin-left: 150px;
+  margin-left: 50px;
   width: 640px;
 }
 .shild {
