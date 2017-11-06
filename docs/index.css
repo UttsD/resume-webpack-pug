@@ -69,12 +69,16 @@ h3 {
   flex-wrap: wrap;
 }
 .rightcol {
-  margin-left: 70px;
-  width: 425px;
+  margin-left: 50px;
+  margin-right: 50px;
+  flex-basis: 425px;
+  flex-grow: 1;
 }
 .leftcol {
-  margin-left: 70px;
-  width: 640px;
+  margin-left: 50px;
+  margin-right: 60px;
+  flex-basis: 640px;
+  flex-grow: 2;
 }
 .shild {
   width: 237px;
@@ -142,7 +146,6 @@ h3 {
 }
 .profile p {
   font-size: 16px;
-  width: 430px;
   font-family: 'MyriadPro-Regular';
   font-weight: normal;
   word-wrap: break-word;
